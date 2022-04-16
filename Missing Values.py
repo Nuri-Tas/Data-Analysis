@@ -12,12 +12,13 @@ print(missing_data.sort_values(ascending=False))
 
 for element in missing_data.index:
     print(element)
-# calculate the percentage
+    
+# calculate the percentage of missind data in each seperate row
 
 percentage_missing = missing_data.index.map(lambda p: missing_data[p] / len(reviews[p]))
 print(percentage_missing)
 
-# total percentage of missing
+# the total percentage of missing data
 
 total_amount = np.product(reviews.shape)
 total_miss = missing_data.sum()
@@ -27,7 +28,7 @@ print(percentage)
 dropped = reviews.dropna(axis=1)
 
 
-# columns that dropped
+# the columns that dropped
 
 print(dropped)
 
@@ -36,5 +37,4 @@ print(reviews.fillna(method="bfill", axis=0))
 print(reviews.size)
 print(len(reviews))
 
-# shape gives the rows and columns of a data set respectively
 
